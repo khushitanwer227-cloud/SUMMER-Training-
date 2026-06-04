@@ -3,55 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  rel="stylesheet" href="./style.css">
     <title>Portfolio</title>
-
-    <!-- <link rel="stylesheet"  href="./style.css"/> -->
-    <style>
-        
-body {
-    background-color: lightgrey;
-  color: rgb(3, 3, 6);
-  
-}
-
-h1 {
-    background-color: rgb(235, 155, 155);
-  color: white;
-}
-
-h2 {
-  color: rgb(61, 6, 43);
-}
-nav{
-      width: 320px;
-   height: 50px;
-  padding: 10px;
-    margin: 0;
-
-}
-
-.p3 {
-  font-family: "Lucida Console", "Courier New", monospace;
-}
-
- p{
-     font-family: "Lucida Console", "Courier New", monospace;
-
- }
-
-    </style>
 
   </head>
   <body>
     <header>
-      <section  class="simple" id="logo">
-        <h1 style="color:blue;text-align:center;">PORTFOLIO.</h1>
+      <section >
+        <h1 style="color:blue;text-align:center; background-color:rgb(243, 195, 243);margin : 50px; padding: 50px;">PORTFOLIO.</h1>
         <br />
-        <h2>KHUSHI TANWER</h2>
+        <h2 id="k">KHUSHI TANWER</h2>
     
       </section>
 
-      <nav>
+      <nav class="line1">
        <li><a href="#Introduction">My Introduction</a></li>
        <li><a href="# My Goal">My Goal</a></li>
        <li><a href="#Education">Education</li>
@@ -61,10 +26,9 @@ nav{
     </header>
     <main>
       <section  class="simple">
-        <br>
         <h2>Introduction</h2>
 
-        <p>
+        <p class="italic">
           My name is Khushi, I am 18 years old, and I am from Haryana. I am a
           first-year student at K.R. Mangalam University, where my first
           semester results were very good, and I secured a 9 CGPA because I
@@ -78,17 +42,16 @@ nav{
           for future tech placements.
         </p>
       </section>
-      <section  >
-        
+      <section   class="simple">
+    
         <h2>Vision</h2>
-        <p >
+        <p class="italic" >
           To become an industry-ready professional by mastering full-stack web
           development and core computer science concepts, securing a high-impact
           tech role before graduating, and leveraging practical internship
           experience to deliver immediate value to a forward-thinking
           organization
         </p>
-
         <h2>Mission</h2>
         <h3>LEARN  </h3>
         <table border="1px solid black" width="40%">
@@ -105,7 +68,7 @@ nav{
 
         </table>
       </section>
-      <section  >
+      <section class="simple" >
         <h2>Education</h2>
 
         <h2>K.R Manglam University</h2>
@@ -139,7 +102,7 @@ nav{
           drives my technical journey today.
         </p>
       </section>
-      <section >
+      <section class="simple">
         <h2>My Skills</h2>
         <ol>
           <li>CSS</li><br>
@@ -148,9 +111,9 @@ nav{
           <li>PYTHON</li><br>
         </ol>
       </section>
-      <section >
+      <section class="fill">
         <h2>Get in Touch</h2>
-        <from>
+        <from >
           <label for="fname"> First Name:</label><br>
           <input
             type="text"
@@ -171,8 +134,7 @@ nav{
             type="text"
             id="mail"
             name="email"
-            placeholder="Your Email.."
-          /><br>
+            placeholder="Your Email.."  /><br>
 
           <label for="no"> Phone Number:</label><br>
           <input type="text" id="no" placeholder="phone number.." /><br>
