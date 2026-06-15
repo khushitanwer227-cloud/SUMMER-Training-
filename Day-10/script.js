@@ -64,11 +64,6 @@ contactBtn.addEventListener('mouseover',() =>{
 
 });
 
-
-contactBtn.addEventListener('mouseout', () => {
-    contactBtn.style.backgroundColor = '#007bff';
-});
-
 profilecard.appendChild(photo);
 profilecard.appendChild(nameHeading);
 profilecard.appendChild(para);
