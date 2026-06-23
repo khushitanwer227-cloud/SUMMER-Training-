@@ -3,18 +3,18 @@ import ProfileCard from './ProfileCard';
 import './App.css';
 
 const App = () => {
-  // 1. Core State Management: Counter
+ 
   const [count, setCount] = useState(0);
 
-  // 2. Side Effect: Sync count with Browser Tab Title
+
   useEffect(() => {
     document.title = `Count: ${count} | React App`;
     
-    // Example of cleanup function (optional but good practice)
+    
     return () => {
       document.title = "React App"; 
     };
-  }, [count]); // Dependency array: Effect triggers only when count changes
+  }, [count]); // Dependency array
 
   const userProfiles = [
     { id: 1, name: "Arjun Mehta", role: "Software Engineer", email: "arjun@example.com", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIiHU4378zT-led2K1A8VpHhLmiJTSPnPUJQrO-_fChw&s" },
@@ -47,11 +47,11 @@ const App = () => {
          
           {userProfiles.map((user) => (
             <ProfileCard
-              key={user.id} // Essential unique identifier for React tracking
+              key={user.id} 
               name={user.name}
               role={user.role}
               email={user.email}
-              image={user.img || undefined} // Passes undefined if empty string, triggering default prop fallback
+              image={user.img || undefined} 
             />
           ))}
         </div>
