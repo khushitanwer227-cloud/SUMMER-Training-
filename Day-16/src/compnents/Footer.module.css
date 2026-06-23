@@ -1,0 +1,66 @@
+/* src/components/Footer.module.css */
+.footerBase {
+  border-top: 1px solid #ebedee;
+  background: #ffffff;
+  width: 100%;
+}
+
+.corporateTree {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.columnNode {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.columnNode h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.columnNode span {
+  font-size: 13px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.columnNode span:hover {
+  text-decoration: underline;
+}
+
+.footerFloor {
+  background: #282c31;
+  color: #c8cbcc;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.legalSubtext {
+  display: flex;
+  gap: 24px;
+}
+
+.legalSubtext span {
+  cursor: pointer;
+}
+
+.legalSubtext span:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .corporateTree { grid-template-columns: repeat(2, 1fr); padding: 30px 20px; }
+  .footerFloor { flex-direction: column; gap: 16px; text-align: center; }
+}
