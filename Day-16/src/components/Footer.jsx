@@ -1,12 +1,13 @@
 import React from 'react'
-import './Footer.css'
+import styles from'./Footer.module.css'
+
 
 function Footer() {
   return (
-    <footer className="footer" style={{ backgroundColor:'black', color:"white" ,dissplay:"flex" , flexDirection :"row"}}>
-      <div className="footer-container">
+    <footer className={styles.footer} style={{ backgroundColor:'black', color:"white" ,dissplay:"flex" , flexDirection :"row"}}>
+      <div className={styles.footercontainer}>
         
-        <div className="footer-section">
+        <div className={styles.footersection}>
           <h3>PRODUCTS</h3>
           <p>Shoes</p>
           <p>Clothing</p>
@@ -14,7 +15,7 @@ function Footer() {
           <p>New Arrivals</p>
         </div>
 
-        <div className="footer-section">
+        <div className={styles.footersection}>
           <h3>SPORTS</h3>
           <p>Running</p>
           <p>Football</p>
@@ -22,7 +23,7 @@ function Footer() {
           <p>Basketball</p>
         </div>
 
-        <div className="footer-section">
+        <div className={styles.footersection}>
           <h3>COMPANY</h3>
           <p>About Us</p>
           <p>Careers</p>
@@ -30,7 +31,7 @@ function Footer() {
           <p>Contact</p>
         </div>
 
-        <div className="footer-section">
+        <div className={styles.footersection}>
           <h3>SUPPORT</h3>
           <p>Help Center</p>
           <p>Returns</p>
