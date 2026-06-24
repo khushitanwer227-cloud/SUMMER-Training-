@@ -4,30 +4,30 @@
   padding: 40px;
 }
 
-.footer-container {
+.footercontainer {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap; 
 }
 
-.footer-section {
+.footersection {
   min-width: 180px;
 }
 
-.footer-section h3 {
+.footersection h3 {
   margin-bottom: 15px;
 }
 
-.footer-section p {
+.footersection p {
   margin: 8px 0;
 }
 
-.footer-section p {
+.footersection p {
   margin: 8px 0;
   cursor: pointer;
 }
 
-.footer-section p:hover {
+.footersection p:hover {
   text-decoration: underline;
 }
