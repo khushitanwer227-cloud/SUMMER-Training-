@@ -8,30 +8,30 @@
   padding: 15px 30px;
 }
 
-.left-nav {
+.leftnav {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.nav-links {
+.navlinks {
   display: flex;
   gap: 25px;
   list-style: none;
 }
 
-.nav-links li {
+.navlinks li {
   position: relative;
   cursor: pointer;
   font-weight: bold;
 }
 
-.right-nav {
+.rightnav {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.right-nav input {
+.rightnav input {
   padding: 8px;
 }
