@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryCard from './CategoryCard'
-import './CategoryGrid.css'
+import style from './CategoryGrid.module.css'
 
 function CategoryGrid(){
   const categories = [
@@ -25,7 +25,7 @@ function CategoryGrid(){
 
     {
       title: "PLAY LIKE PROS FLAT 30%",
-      image: " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPfKcWlIQ9KrfL2t3r3EvDmfl8EGy7h4Mhw&s"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPfKcWlIQ9KrfL2t3r3EvDmfl8EGy7h4Mhw&s"
     },
     {
       title: " SPECIAL OFFER",
@@ -33,7 +33,7 @@ function CategoryGrid(){
     }
 ]
  return (
-    <div className="grid">
+    <div className={style.grid}>
       {categories.map((item) => (
         <CategoryCard
           key={item.title}
