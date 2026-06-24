@@ -1,22 +1,22 @@
 import {useState} from 'react';
  import { menuData } from '../data/menuData';
 
- import './Navbar.css';
+  import styles from'./Navbar.module.css';
  
  function Navbar() { 
 
   const [activeMenu, setActiveMenu] = useState("");
    return (
-<nav className="navbar">
+<nav  className={styles.navbar}>
 
-  <div className="left-nav"  >
+  <div className={styles.leftnav} >
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
       alt="logo"
       style={{ width: "80px" }}
     />
 
-    <ul className="nav-links"  >
+    <ul className={styles.navlinks}  >
       {Object.keys(menuData).map((item) => (
         <li
           key={item}
@@ -26,7 +26,7 @@ import {useState} from 'react';
           {item}
 
           {activeMenu === item && (
-            <div className="dropdown">
+            <div className={styles.dropdown}>
               {menuData[item].map((menu) => (
                 <p key={menu}>{menu}</p>
               ))}
@@ -37,7 +37,7 @@ import {useState} from 'react';
     </ul>
   </div>
 
-  <div className="right-nav">
+  <div  className={styles.rightnav}>
     <span>help</span>
     <span>orders and returns</span>
     <span>sign up</span>
