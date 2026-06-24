@@ -26,8 +26,7 @@
   position: relative;
   transition: border 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
-
-/* Sharp outline raise transformation blueprint mimicking adidas.co.in */
+
 .productCard:hover {
   border: 1px solid #000000;
   transform: translateY(-4px);
