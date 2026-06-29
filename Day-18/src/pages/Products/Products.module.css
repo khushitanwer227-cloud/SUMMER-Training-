@@ -1,0 +1,98 @@
+.pageContainer {
+  width: 90%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.backBtn {
+  padding: 10px 18px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.backBtn:hover {
+  background: #333;
+}
+
+.titleHead {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 25px;
+}
+
+.productCard {
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  transition: 0.3s;
+  background: white;
+  width: 220px;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.imgWrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWrap img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.saleTag {
+  position: absolute;
+  background: red;
+  color: white;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.metaData {
+  padding: 15px;
+}
+
+.metaData h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.metaData p {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.pagiFlex {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
