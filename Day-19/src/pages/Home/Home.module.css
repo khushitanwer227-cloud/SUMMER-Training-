@@ -206,6 +206,25 @@
 }
 
 
+.btncart {
+  width: 100%;
+  background-color: rgb(66, 176, 244);
+  color: white;
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+
+
 @media (max-width: 768px) {
   .saleBanner h1 {
     font-size: 1.6rem;
