@@ -1,12 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CircularProgress, Alert } from '@mui/material';
 import CategoryGrid from '../components/CategoryGrid/CategoryGrid';
 import styles from './Home.module.css';
+import { useCart } from '../context/CartContext'; 
 
 function Home() {
   const navigate = useNavigate();
+  const { addToCart } = useCart(); 
 
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [globalProducts, setGlobalProducts] = useState([]);
@@ -23,7 +24,6 @@ function Home() {
       setLoading(true);
       setError(null);
       try {
-       
         const trendingRes = await fetch('https://dummyjson.com/products/category/mens-shoes?limit=4');
         const trendingData = await trendingRes.json();
         setTrendingProducts(trendingData.products);
@@ -49,36 +49,58 @@ function Home() {
 
   const totalPages = Math.ceil(totalProducts / limit);
 
-  if (loading) return <div className={styles.centerContainer}><CircularProgress color="inherit" /></div>;
-  if (error) return <div className={styles.centerContainer}><Alert severity="error">{error}</Alert></div>;
+  if (loading) return <div className={styles.centerContainer}>
+    <CircularProgress color="inherit" /></div>;
+  if (error) return <div className={styles.centerContainer}>
+    <Alert severity="error">{error}</Alert></div>;
 
   return (
     <div className={styles.homeContainer}>
       
-    
       <div className={styles.saleBanner}>
         <h1>END OF SEASON SALE (EOSS) - FLAT 30% OFF</h1>
         <p>Premium sports gear & lifestyle collections direct from stock.</p>
       </div>
 
-    
+     
       <div className={styles.sectionDivider}>
         <h2 className={styles.sectionHeading}>🔥 CURRENTLY TRENDING NOW</h2>
         <div className={styles.trendingGrid}>
           {trendingProducts.map(item => (
-            <div key={`trending-${item.id}`} onClick={() => navigate(`/product/${item.id}`)} className={styles.trendingCard}>
-              <span className={styles.exclusiveBadge}>HOT ARRIVAL</span>
-              <div className={styles.imgWrap}><img src={item.thumbnail} alt={item.title} /></div>
-              <div className={styles.metaData}>
-                <h4>{item.title}</h4>
-                <p className={styles.priceText}>${item.price}</p>
+            <div key={`trending-${item.id}`} className={styles.trendingCard} 
+            >
+              
+           
+              <div onClick={() => navigate(`/product/${item.id}`)} style={{ cursor: 'pointer' }}>
+                <span className={styles.exclusiveBadge}>HOT ARRIVAL</span>
+                <div className={styles.imgWrap}><img src={item.thumbnail} alt={item.title} /></div>
+                <div className={styles.metaData}>
+                  <h4>{item.title}</h4>
+                  <p className={styles.priceText}>${item.price}</p>
+                </div>
               </div>
+
+              <button 
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation(); 
+                  if (item) {
+                    addToCart(item);
+                    alert(`${item.title} added to cart! 🛍️`);
+                  }
+                }}
+                className={styles.btncart}
+              
+              >
+                🛒 Add to Cart
+              </button>
+
             </div>
           ))}
         </div>
       </div>
 
-     
+      
       <div className={styles.sectionDivider}>
         <h2 className={styles.sectionHeading}>👟 SHOP BY CATEGORY</h2>
         <CategoryGrid />
@@ -86,25 +108,45 @@ function Home() {
 
       <hr className={styles.horizontalLine} />
 
+      
       <div className={styles.sectionDivider}>
         <h2 className={styles.sectionHeading}>🛍️ FRESH NEW ARRIVALS ({totalProducts} Items)</h2>
         <p className={styles.sectionSubtext}>Explore total global collection below. Use buttons to skip pages.</p>
         
         <div className={styles.globalGrid}>
           {globalProducts.map(item => (
-            <div key={`global-${item.id}`} onClick={() => navigate(`/product/${item.id}`)} className={styles.productCard}>
-              <span className={styles.discountBadge}>-{Math.round(item.discountPercentage)}%</span>
-              <div className={styles.imgWrap}><img src={item.thumbnail} alt={item.title} /></div>
-              <div className={styles.metaData}>
-                <h4>{item.title}</h4>
-                <p className={styles.priceText}>${item.price}</p>
+            <div key={`global-${item.id}`} className={styles.productCard} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              
+              <div onClick={() => navigate(`/product/${item.id}`)} style={{ cursor: 'pointer' }}>
+                <span className={styles.discountBadge}>-{Math.round(item.discountPercentage)}%</span>
+                <div className={styles.imgWrap}><img src={item.thumbnail} alt={item.title} /></div>
+                <div className={styles.metaData}>
+                  <h4>{item.title}</h4>
+                  <p className={styles.priceText}>${item.price}</p>
+                </div>
               </div>
+
+              
+              <button 
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (item) {
+                    addToCart(item);
+                    alert(`${item.title} added to cart! 🛍️`);
+                  }
+                }}
+               className={styles.btncart}
+              >
+                🛒 Add to Cart
+              </button>
+
             </div>
           ))}
         </div>
       </div>
 
-      
+     
       {totalPages > 1 && (
         <div className={styles.customPagination}>
           <button 
@@ -131,5 +173,7 @@ function Home() {
     </div>
   );
 }
+
+export default Home;
 
 export default Home;
