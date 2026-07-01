@@ -8,7 +8,7 @@ import { useCart } from "../../context/CartContext";
 function Navbar() { 
   const [activeMenu, setActiveMenu] = useState("");
   const navigate = useNavigate();
-  const { totalItems } = useCart(); // Hook se total count nikala
+  const { totalItems } = useCart(); 
 
   return (
     <div className={styles.navwrapper} onMouseLeave={() => setActiveMenu("")}>
