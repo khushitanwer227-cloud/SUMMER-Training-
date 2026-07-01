@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { CircularProgress, Alert, Rating } from "@mui/material";
-
-
 import { useCart } from '../../context/CartContext';
+import styles from './ProductDetail.module.css'
 
 function ProductDetail() {
    const { addToCart } = useCart(); 
@@ -11,8 +10,9 @@ function ProductDetail() {
   const navigate = useNavigate();
  
   const [product, setProduct] = useState(null);
-
-    useEffect(() => {
+  const [loading, setLoading] = useState(true);
+    
+  useEffect(() => {
     fetch(`https://dummyjson.com/products/${product_id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Data Sync Missing");
@@ -30,37 +30,24 @@ function ProductDetail() {
 
 
   return (
-<button 
-  type="button"
-  onClick={(e) => {
-    e.preventDefault(); 
-    e.stopPropagation(); 
-    
-    console.log("Button clicked! Product data:", product); 
 
-    if (product) {
-      addToCart(product);
-      alert(`${product.title} Bag mein add ho gaya! 🛍️`);
-    } else {
-      alert("Product load ho raha hai, thoda rukiye!");
+  <button 
+  className={styles.blueCartBtn} 
+  onClick={(e) => {
+    e.stopPropagation();
+    if (addToCart) {
+      addToCart(item);
+      alert(`${item.title} added to cart!`);
     }
   }}
-  style={{
-    backgroundColor: "#000", 
-    color: "#fff", 
-    padding: "15px 30px", 
-    border: "none",
-    fontWeight: "bold",
-    cursor: "pointer",
-    width: "100%",
-    display: "block",
-    position: "relative", 
-    zIndex: 999,          
-    marginTop: "20px"
-  }}
 >
-  ADD TO BAG 🛍️
+
+  <span className={styles.cartIcon}>🛒</span> 
+  Add to Cart
 </button>
+
   );
 }
 export default ProductDetail;
+
+
