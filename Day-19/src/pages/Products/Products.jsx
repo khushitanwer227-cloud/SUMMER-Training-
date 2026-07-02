@@ -8,9 +8,7 @@ function Products() {
   const navigate = useNavigate();
 
   const [featuredProducts, setFeaturedProducts] = useState([]);
-
   const [catalogProducts, setCatalogProducts] = useState([]);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
