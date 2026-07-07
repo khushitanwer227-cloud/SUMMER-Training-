@@ -1,0 +1,35 @@
+
+.blueCartBtn {
+  width: 100%;
+  background-color: #6da1f7; /* Exact light blue color as per your image */
+  color: rgba(255, 255, 255, 0.9); /* Transparent white text */
+  border: none;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px; /* Smooth corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  margin-top: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover Effect */
+.blueCartBtn:hover {
+  background-color: #558ee6; /* Soft dark-blue shift on hover */
+  color: #ffffff;
+}
+
+/* Click Effect */
+.blueCartBtn:active {
+  transform: scale(0.98); /* Chota sa press effect */
+}
+
+/* Optional: Icon adjustment */
+.cartIcon {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,57 @@
+.line1 {
+  height: 100px;
+  padding: 30px;
+  border: 2px solid rgb(24, 60, 82);
+  margin: 50px;
+}
+#k{
+    color:rgb(37, 7, 57);
+      text-align:center;
+  text-shadow: 1px 1px 2px rgb(246, 144, 144), 0 0 25px rgb(102, 102, 219), 0 0 5px rgb(65, 65, 109);
+}
+
+header{
+    background-color: #efefc7;
+    outline-style: dotted;
+    padding: 30px;
+    
+
+}
+.simple{
+    background-color: #f8f6e2;
+    
+}
+
+
+h1 {
+  background-color: rgb(185, 209, 235);
+  color: rgb(44, 8, 8);
+}
+
+
+nav {
+  max-width: 320px;
+  height: 50px;
+  padding: 10px;
+  margin: 0;
+}
+p.italic {
+  font-style: italic;
+}
+.fill{
+  background-color: rgb(183, 187, 233);
+  max-width: 1000px;
+  border: 5px solid rgb(22, 15, 49);
+  padding: 100px;
+  margin:9px;
+  color:black;
+
+}
+
+.p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+p {
+  font-family: "Lucida Console", "Courier New", monospace;
+}

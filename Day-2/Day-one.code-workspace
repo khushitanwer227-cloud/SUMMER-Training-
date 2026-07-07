@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Day-one",
+			"path": "../Day-one"
+		},
+		{
+			"name": "Directory",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Directory"
+	}
+}

@@ -1,0 +1,56 @@
+.navwappe{
+  position: relative;
+
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: relative;
+  gap: 25px;
+ 
+}
+
+
+.leftnav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+
+.navlink {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  text-decoration: none;
+   color: #000;
+   font-weight: bold;
+    margin: 0 10px;
+     gap: 25px;
+}
+
+
+
+.rightnav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: end;
+}
+
+.rightnav input {
+  padding: 8px;
+}
+ 
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: left 50px;
+ cursor: pointer;
+ gap :20px;
+
+}

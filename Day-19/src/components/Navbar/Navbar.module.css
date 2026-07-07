@@ -1,0 +1,151 @@
+.navwrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid #ebedee;
+  height: 60px;
+}
+.leftnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.logoImg {
+  width: 60px;
+  cursor: pointer;
+}
+.navlink {
+  display: flex;
+  gap: 35px;
+  margin-left: 50px;
+}
+.bar {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  padding: 20px 0;
+  color: #000;
+}
+.bar:hover {
+  border-bottom: 2px solid #000;
+}
+.rightnav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 6px 12px;
+}
+.search input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 13px;
+  width: 160px;
+}
+.iconStyle {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Dropdown Grid Animation Architecture */
+.dropdownPanel {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #d3d7da;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.2s ease-out forwards;
+}
+.dropdownContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.dropdownHeader h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+.viewAllLink {
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.dropdownGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.dropdownColumn h4 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #000;
+}
+.dropdownColumn ul {
+  list-style: none;
+  padding: 0;
+}
+.dropdownColumn li {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.dropdownColumn li:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bagContainer {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.bagBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  border: 1px solid #fff;
+}

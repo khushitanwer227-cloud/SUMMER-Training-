@@ -1,0 +1,252 @@
+/* ==========================================================
+   MAIN LAYOUT & BANNER SETTINGS
+   ========================================================== */
+.homeContainer {
+  padding: 0 0 50px 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.saleBanner {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.saleBanner h1 {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.saleBanner p {
+  font-size: 13px;
+  color: #c8cbcc;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.sectionDivider {
+  padding: 0 40px;
+  margin-bottom: 60px;
+}
+
+.sectionHeading {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.sectionSubtext {
+  font-size: 13px;
+  color: #767677;
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+
+.horizontalLine {
+  border: 0;
+  height: 1px;
+  background: #ebedee;
+  margin: 50px 40px;
+}
+
+/* ==========================================================
+   1. HORIZONTAL TRENDING SLIDER VIEW (Strictly Horizontal Row)
+   ========================================================== */
+.trendingGrid {
+  display: flex;             /* Elements ko strictly ek sidhi line mein lane ke liye */
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 20px;
+  overflow-x: auto;          /* Screen size se zyada items hone par horizontal scroll aayega */
+  padding-bottom: 15px;      /* Scrollbar se spacing gap */
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+/* Custom premium scrollbar for horizontal row */
+.trendingGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.trendingGrid::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 3px;
+}
+
+.trendingGrid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Fixed width container cards for horizontal strip */
+.trendingCard {
+  border: 1px solid #ebedee;
+  position: relative;
+  cursor: pointer;
+  background-color: #fff;
+  flex: 0 0 240px;           /* CRITICAL: Squeeze aur columns mein break hone se rokega */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trendingCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.exclusiveBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  z-index: 5;
+}
+
+/* ==========================================================
+   2. BOTTOM LIVE GLOBAL RESPONSIVE CATALOGUE (Grid View)
+   ========================================================== */
+.globalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Auto layouts with normal grid scaling */
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.productCard {
+  border: 1px solid #ebedee;
+  position: relative;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e51e25;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 6px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+/* ==========================================================
+   3. UNIVERSAL IMAGE CONTAINER SETTINGS (Anti-Zoom Engine)
+   ========================================================== */
+.imgWrap {
+  width: 100%;
+  height: 240px;            /* Square framing jisse image safe window hold kare */
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.imgWrap img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;      /* Kisi bhi dimension par pixel crop aur massive zoom hone se rokega */
+}
+
+/* ==========================================================
+   4. PRODUCT CONTENT METADATA & CONTROL ELEMENTS
+   ========================================================== */
+.metaData {
+  padding: 15px;
+  background: #fff;
+}
+
+.metaData h4 {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 6px 0;
+  color: #000;
+}
+
+.priceText {
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* HTML Custom Controller Pagination Grid Styling */
+.customPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 40px 0 20px 0;
+  width: 100%;
+}
+
+.pagiBtn {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 10px 25px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.pagiBtn:disabled {
+  background-color: #eceff1;
+  border-color: #eceff1;
+  color: #b0bec5;
+  cursor: not-allowed;
+}
+
+.pagiBtn:not(:disabled):hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.pageInfo {
+  font-size: 14px;
+  color: #000;
+}
+
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  width: 100%;
+}

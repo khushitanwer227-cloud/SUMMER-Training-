@@ -1,0 +1,33 @@
+.footer {
+  background: black;
+  color: white;
+  padding: 40px;
+}
+
+.footercontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+.footersection {
+  min-width: 180px;
+}
+
+.footersection h3 {
+  margin-bottom: 15px;
+}
+
+.footersection p {
+  margin: 8px 0;
+}
+
+.footersection p {
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.footersection p:hover {
+  text-decoration: underline;
+}

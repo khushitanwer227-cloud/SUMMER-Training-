@@ -1,0 +1,37 @@
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.leftnav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navlinks {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navlinks li {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.rightnav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rightnav input {
+  padding: 8px;
+}
