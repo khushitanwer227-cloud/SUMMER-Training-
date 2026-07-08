@@ -13,7 +13,6 @@ const PORT = 8000;
 //middleware - plugin
 app.use(express.urlencoded({ extended: false }));
 
-
 // Routes
 
 app.get('/users', (req, res) => {
@@ -25,8 +24,6 @@ app.get('/users', (req, res) => {
     res.send(html);
 
 });
-
-
 
 //REST API
 app.get("/api/users", (req, res) => {
@@ -81,8 +78,6 @@ app
 //     // delete user with id
 //    return res.json({status:"Pending"});
 // });
-
-
 
 app.post('/api/users', (req, res) => {
     const body = req.body;
