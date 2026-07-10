@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 // Signup
-app.post("/create", async (req, res) => {
+app.post("/sign-up", async (req, res) => {
     const { username, email, password, age } = req.body;
 
     const existingUser = users.find(user => user.email === email);
@@ -62,7 +62,7 @@ app.get("/login", (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => {
+app.post("/sign-in", async (req, res) => {
 
     const { email, password } = req.body;
 
