@@ -6,7 +6,6 @@ const path = require("path");
 
 const app = express();
 
-// In-memory array
 const users = [];
 
 app.set("view engine", "ejs");
@@ -16,13 +15,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
-
+// Home
 app.get("/", (req, res) => {
     res.render("index");
 });
 
+// Login Page
+app.get("/login", (req, res) => {
+    res.render("login");
+});
+
 // Signup
-app.post("/create", async (req, res) => {
+app.post("/sign-up", async (req, res) => {
+
     const { username, email, password, age } = req.body;
 
     const existingUser = users.find(user => user.email === email);
@@ -42,27 +47,11 @@ app.post("/create", async (req, res) => {
 
     users.push(newUser);
 
-    const token = jwt.sign(
-        { email: newUser.email },
-        "shhhhhhhhhhhh",
-        { expiresIn: "1h" }
-    );
-
-    res.cookie("token", token);
-
-    res.send({
-        message: "User Created Successfully",
-        user: newUser
-    });
+    res.send("User Created Successfully");
 });
 
-
-app.get("/login", (req, res) => {
-    res.render("login");
-});
-
-
-app.post("/login", async (req, res) => {
+// Login
+app.post("/sign-in", async (req, res) => {
 
     const { email, password } = req.body;
 
@@ -72,9 +61,9 @@ app.post("/login", async (req, res) => {
         return res.send("User not found");
     }
 
-    const result = await bcrypt.compare(password, user.password);
+    const match = await bcrypt.compare(password, user.password);
 
-    if (!result) {
+    if (!match) {
         return res.send("Invalid Password");
     }
 
@@ -89,13 +78,13 @@ app.post("/login", async (req, res) => {
     res.send("Login Successful");
 });
 
-
+// Middleware
 function verifyToken(req, res, next) {
 
     const token = req.cookies.token;
 
     if (!token) {
-        return res.status(401).send("Please Login First");
+        return res.send("Please Login First");
     }
 
     try {
@@ -103,15 +92,16 @@ function verifyToken(req, res, next) {
         req.user = data;
         next();
     } catch (err) {
-        return res.status(403).send("Invalid Token");
+        return res.send("Invalid Token");
     }
 }
 
-
+// Protected Route
 app.get("/profile", verifyToken, (req, res) => {
     res.send(`Welcome ${req.user.email}`);
 });
 
+// Logout
 app.get("/logout", (req, res) => {
     res.cookie("token", "");
     res.redirect("/");
