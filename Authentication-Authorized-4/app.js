@@ -27,10 +27,7 @@ app.get("/login", (req, res) => {
 
 // Signup
 app.post("/sign-up", async (req, res) => {
-<<<<<<< HEAD
 
-=======
->>>>>>> 0e42db9c77b5ce1beeaac0e41deba90c34d08911
     const { username, email, password, age } = req.body;
 
     const existingUser = users.find(user => user.email === email);
@@ -53,16 +50,13 @@ app.post("/sign-up", async (req, res) => {
     res.send("User Created Successfully");
 });
 
-<<<<<<< HEAD
-// Login
-=======
+
+
 
 app.get("/login", (req, res) => {
     res.render("login");
 });
 
-
->>>>>>> 0e42db9c77b5ce1beeaac0e41deba90c34d08911
 app.post("/sign-in", async (req, res) => {
 
     const { email, password } = req.body;
